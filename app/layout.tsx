@@ -1,8 +1,8 @@
 import { defaultMeta, viewport } from "@/utils/meta";
+import { NextUIProvider } from "@nextui-org/react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { languages } from "./i18n/settings";
-import { NextUIProvider } from "@nextui-org/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -18,15 +18,17 @@ const NavBar = () => {
   return (
     <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
       <NavbarBrand>
-        <Image
-          src={logoImg}
-          alt="Tailwind Logo"
-          width={30}
-          priority
-          className="h-auto object-cover"
-        />
+        <Link href="/">
+          <Image
+            src={logoImg}
+            alt="Logo"
+            width={30}
+            height={30}
+            className="h-[30px] w-[30px] object-contain"
+          />
+        </Link>
         <Link href="/" className="ml-3 text-xl font-bold">
-          Tailwind Logo
+          Logo
         </Link>
       </NavbarBrand>
       <NavBarItem />
@@ -40,7 +42,6 @@ const NavBar = () => {
           className="lg:hidden"
         />
       </NavbarContent>
-
       <Menu />
     </Navbar>
   );
