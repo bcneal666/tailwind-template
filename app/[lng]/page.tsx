@@ -1,15 +1,16 @@
 import { getTranslation } from "@/app/i18n";
-import Link from "next/link";
-import { Button } from "@nextui-org/react";
+import cardImg from "@/public/card-complete.jpeg";
 import {
+  Button,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
+  CardHeader,
   Divider,
 } from "@nextui-org/react";
 import Image from "next/image";
-import cardImg from "@/public/card-complete.jpeg";
+import Link from "next/link";
+import NavBar from "@/components/layout/navbar/NavBar";
 
 interface IProps {
   params: Promise<{
@@ -21,13 +22,12 @@ export default async function Home({ params }: IProps) {
   const lng = (await params).lng;
   const { t } = await getTranslation(lng, "common");
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
+    <div className="flex min-h-screen flex-col items-center gap-16 pb-20 font-mono sm:px-20">
+      <NavBar />
       <main className="flex flex-col items-center gap-8 sm:items-start">
-        <h1>{t("title")}</h1>
-        <Button color="primary">Click me</Button>
-        <Card className="bg-red-500 min-w-full">
+        <Card className="min-w-full bg-gradient-to-tr from-indigo-800 to-yellow-500">
           <CardHeader>
-            <h2>Card Title</h2>
+            <h2>{t("title")}</h2>
           </CardHeader>
           <Divider />
           <CardBody>
@@ -35,14 +35,18 @@ export default async function Home({ params }: IProps) {
               src={cardImg}
               alt="Card Image"
               width={300}
-              height={300}
               priority
-              className="h-auto w-auto"
+              className="rounded-2xl object-cover"
             />
           </CardBody>
           <Divider />
-          <CardFooter>
-            <p>Card Footer</p>
+          <CardFooter className="flex items-center justify-end">
+            <Button
+              className="bg-gradient-to-tr from-blue-500 to-yellow-500 text-white shadow-lg"
+              radius="full"
+            >
+              Click me
+            </Button>
           </CardFooter>
         </Card>
       </main>
