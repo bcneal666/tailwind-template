@@ -16,7 +16,7 @@ const NavBarItem = () => {
           <Link
             className={`${
               pathname === item.href ? "text-primary" : "text-foreground"
-            } text-xl font-bold`}
+            } font-bold`}
             href={item.href}
           >
             {item.label}

@@ -5,12 +5,11 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
   NavbarMenuToggle,
 } from "@nextui-org/react";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, NavBarItem } from "./";
+import { Menu, NavBarItem, Profile } from "./";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,9 +33,7 @@ const NavBar = () => {
       <NavBarItem />
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
+        <Profile />
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="lg:hidden"
